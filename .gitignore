@@ -1,0 +1,8 @@
+*.pyc
+
+raw_data
+data
+data*
+
+src/runs
+src/wandb
