@@ -1,18 +1,18 @@
-# LinkBERT
+# LinkBERT: A Knowledgeable Language Model Pretrained with Document Links
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square)](http://makeapullrequest.com)
+[![arXiv](https://img.shields.io/badge/arXiv-2203.15827-b31b1b.svg)](https://arxiv.org/abs/2203.15827)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/linkbert-pretraining-language-models-with/question-answering-on-mrqa-2019)](https://paperswithcode.com/sota/question-answering-on-mrqa-2019?p=linkbert-pretraining-language-models-with)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/linkbert-pretraining-language-models-with/text-classification-on-blurb)](https://paperswithcode.com/sota/text-classification-on-blurb?p=linkbert-pretraining-language-models-with)
+
 
 This repo provides the model, code & data of our paper: [LinkBERT: Pretraining Language Models with Document Links](https://arxiv.org/abs/2203.15827) (ACL 2022).
-```bib
-@InProceedings{yasunaga2022linkbert,
-  author =  {Michihiro Yasunaga and Jure Leskovec and Percy Liang},
-  title =   {LinkBERT: Pretraining Language Models with Document Links},
-  year =    {2022},  
-  booktitle = {Association for Computational Linguistics (ACL)},  
-}
-```
+[[PDF]](https://arxiv.org/pdf/2203.15827.pdf)
+[[HuggingFace Models]](https://huggingface.co/michiyasunaga)
+
 ### Overview
 LinkBERT is a new pretrained language model (improvement of BERT) that captures **document links** such as hyperlinks and citation links to include knowledge that spans across multiple documents. Specifically, it was pretrained by feeding linked documents into the same language model context, besides using a single document as in BERT.
 
-LinkBERT can be used a drop-in replacement for BERT. It achieves better performance for general language understanding tasks (e.g. text classification), and is also particularly effective for **knowledge-intensive** tasks (e.g. question answering) and **cross-document** tasks (e.g. reading comprehension, document retrieval).
+LinkBERT can be used as a drop-in replacement for BERT. It achieves better performance for general language understanding tasks (e.g. text classification), and is also particularly effective for **knowledge-intensive** tasks (e.g. question answering) and **cross-document** tasks (e.g. reading comprehension, document retrieval).
 
 <p align="center">
   <img src="./figs/overview.png" width="1000" title="Overview of LinkBERT" alt="">
@@ -25,7 +25,7 @@ We release the pretrained LinkBERT (-base and -large sizes) for both the general
 <!-- The -base & -large sizes follow the same model configuration as [BERT](https://github.com/google-research/bert). -->
 
 
-| Model | Size | Domain | Pretraining Corpus | 🤗 Transformers Link |
+| Model | Size | Domain | Pretraining Corpus | Download Link (🤗 HuggingFace) |
 | ------------- | ------------- | --------- | ---- | ---- |
 | LinkBERT-base   | 110M parameters | General | Wikipedia with hyperlinks | [michiyasunaga/LinkBERT-base](https://huggingface.co/michiyasunaga/LinkBERT-base) |
 | LinkBERT-large  | 340M parameters | General | Wikipedia with hyperlinks | [michiyasunaga/LinkBERT-large](https://huggingface.co/michiyasunaga/LinkBERT-large) |
@@ -114,3 +114,15 @@ To evaluate the fine-tuned model additionally on MMLU-professional medicine, run
 
 ### Reproducibility
 We also provide [Codalab worksheet](https://worksheets.codalab.org/worksheets/0x7a6ab9c8d06a41d191335b270da2902e), on which we record our experiments. You may find it useful for replicating the experiments using the same model, code, data, and environment.
+
+
+## Citation
+If you find our work helpful, please cite the following:
+```bib
+@InProceedings{yasunaga2022linkbert,
+  author =  {Michihiro Yasunaga and Jure Leskovec and Percy Liang},
+  title =   {LinkBERT: Pretraining Language Models with Document Links},
+  year =    {2022},  
+  booktitle = {Association for Computational Linguistics (ACL)},  
+}
+```
